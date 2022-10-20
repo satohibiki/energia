@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  今日達成すべきエネルギア {{ ave_energia }}!
+</h1>
+
+<div class="my-4 ml-5">
+  <h1 class="my-3 mr-0">目標設定</h1>
+  <form  method="POST">
+      <!-- <input type="text" placeholder="id" name='id'></input> -->
+      <input type="number"  placeholder="理想体重 (kg)" name='goal_weight' min="0" max="200"></input>
+      <input type="number"  placeholder="期間 (month)" name='interval'></input>
+      <button type="submit">送信する</button>
+  </form>
+</div>
+
+
+
+<div class="my-5 ml-5 mr-5">
+  <h1 class="my-4 ml-0 mr-5">個人情報</h1>
+  <table class="table table-striped" align="center">
+      <thead>
+          <tr>
+              <th>体重</th>
+              <th>身長</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>{{ weight }}</td>
+              <td>{{ height }}</td>
+          </tr>    
+      </tbody>
+  </table>
+</div>
+
+<div class="my-4 ml-5">
+  <h1 class="my-3 mr-0">変更</h1>
+  <form  method="POST">
+      <!-- <input type="text" placeholder="id" name='id'></input> -->
+      <input type="number"  placeholder="新体重 (kg)" name='weight' min="0" max="200"></input>
+      <input type="number"  placeholder="新身長 (cm)" name='height' min="100" max="200"></input>
+      <button type="submit">変更する</button>
+  </form>
+</div>
+
+
+{% endblock %}
