@@ -9,7 +9,7 @@ from datetime import datetime, date
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://satoki:password@localhost:8080/mydatabase'
 db = SQLAlchemy(app)
 
 login_manager = LoginManager()
